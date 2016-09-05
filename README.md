@@ -33,6 +33,35 @@ is optional. The options properties are `fontSize`, `fontColor`, and `totalValue
 will add all the level values and store that on the `totalValue` property. However, you have the option of passing the total value
 yourself if you choose to for your specific needs.
 
+    {
+    "levels": {
+        "0": {
+            "label": "Asset Discovery",
+            "value": 500000,
+            "color": "#ADE472"
+        },
+        "1": {
+            "label": "Plan Presented",
+            "value": 400000,
+            "color": "#88C347"
+        },
+        "2": {
+            "label": "Paperwork Signed",
+            "value": 500000,
+            "color": "#1E814C"
+        },
+        "3": {
+            "label": "Submitted",
+            "value": 1000000,
+            "color": "#0d5c32"
+        }
+        },
+        "options": {
+            "fontSize": 4,
+            "fontColor": "#000000",
+            "totalValue": 2400000
+        }
+    }
 
 ## Future Features
 
