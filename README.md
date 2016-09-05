@@ -5,8 +5,8 @@ Create funnel charts with labels, any amount of levels (stages), and custom colo
 ## HTML Markup/Template
     <!-- required to be rendered -->
     <svg id="funnel-container" perspectiveAspectRatio="none">
-        <svg class="labels" height="100%" width="70%" viewBox="-25 0 100 100" overflow="visible"></svg>
-        <svg class="funnel" height="100%" width="70%" viewBox="0 0 100 100">
+        <svg class="labels" height="100%" width="75%" viewBox="-25 0 100 100" overflow="visible"></svg>
+        <svg class="funnel" height="100%" width="75%" viewBox="0 0 100 100">
             <defs>
                 <clipPath id="funnel-clip">
                     <polygon points="0 0, 100 0, 60 80, 55 100, 45 100, 40 80"></polygon>
