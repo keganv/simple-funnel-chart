@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeganV Simple Funnel Chart</title>
+    <link rel="stylesheet" href="funnel-chart.css">
+</head>
+<body>
+<div style="height:500px;width:80%;margin:auto;">
+<!-- required to be rendered -->
+<svg id="funnel-container" perspectiveAspectRatio="none">
+    <svg class="labels" height="100%" width="75%" viewBox="-25 0 100 100" overflow="visible"></svg>
+    <svg class="funnel" height="100%" width="75%" viewBox="0 0 100 100">
+        <defs>
+            <clipPath id="funnel-clip">
+                <polygon points="0 0, 100 0, 60 75, 55 100, 45 100, 40 75"></polygon>
+            </clipPath>
+        </defs>
+        <rect height="100%" width="100%" fill="white" clip-path="#funnel-clip" style="clip-path:url('#funnel-clip');"></rect>
+        <g class="levels" clip-path="#funnel-clip" style="clip-path:url('#funnel-clip');"></g>
+    </svg>
+</svg>
+</div>
+<!-- end required -->
+<script src="funnel-chart.js"></script>
+<script>
+    // EXAMPLE DATA JSON ARRAY
+    var data = {
+        "levels": {
+            "0": {
+                "label": "Asset Discovery",
+                "value": 200000,
+                "color": "#ADE472"
+            },
+            "1": {
+                "label": "Plan Presented",
+                "value": 400000,
+                "color": "#88C347"
+            },
+            "2": {
+                "label": "Paperwork Signed",
+                "value": 500000,
+                "color": "#1E814C"
+            },
+            "3": {
+                "label": "Submitted",
+                "value": 1000000,
+                "color": "#0d5c32"
+            }
+    },
+        "options": {
+            "fontSize":   3.5,
+            "fontColor":  "#000000",
+            "totalValue": 2400000
+        }
+    };
+    new FunnelChart(data);
+</script>
+</body>
+</html>
