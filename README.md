@@ -4,9 +4,10 @@ Create funnel charts with labels, any amount of levels (stages), and custom colo
 your template or view file however you choose, (link, require, as a module or import). In the example below I am simply using a
 script tag. Simply pass a JSON data object to the constructor function. You choose how the data is passed to the class.
 This could be available in your view template, or you could make an AJAX request within your JavaScript to retrieve then pass the data.
-The HTML must look like the markup below.
+The SVG HTML must look like the markup below.
 
 ## HTML Markup/Template
+    <!-- required to be rendered -->
     <svg id="funnel-container" perspectiveAspectRatio="none">
         <svg class="labels" height="100%" width="70%" viewBox="-25 0 100 100" overflow="visible"></svg>
         <svg class="funnel" height="100%" width="70%" viewBox="0 0 100 100">
@@ -19,6 +20,7 @@ The HTML must look like the markup below.
             <g class="steps" clip-path="#funnel-clip" style="clip-path:url('#funnel-clip');"></g>
         </svg>
     </svg>
+    <!-- end required -->
     <script src="keganv-funnel-chart.js" />
     <script>
       new FunnelChart(data);
