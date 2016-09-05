@@ -1,4 +1,4 @@
-# Keganv Simple Funnel Chart
+# KeganV Simple Funnel Chart
 
 Create funnel charts with labels, any amount of levels (stages), and custom colors. The JavaScript class can be included into
 your template or view file however you choose, (link, require, as a module or import). In the example below I am simply using a
