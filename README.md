@@ -55,6 +55,7 @@ yourself if you choose to for your specific needs.
                 "value": 1000000,
                 "color": "#0d5c32"
             }
+            // More levels here
         },
         "options": {
             "fontSize": 4,
