@@ -51,7 +51,7 @@ The JSON object that you pass to the class must be structured like the example b
             // More levels here
         },
         "options": {
-            "fontSize": 4,
+            "fontSize": 3.5,
             "fontColor": "#000000",
             "totalValue": 2400000
         }
