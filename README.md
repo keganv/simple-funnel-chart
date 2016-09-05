@@ -30,4 +30,10 @@ is optional. The options properties are `fontSize`, `fontColor`, and `totalValue
 will add all the level values and store that on the `totalValue` property. However, you have the option of passing the total value
 yourself if you choose to for your specific needs.
 
+
+## Future Features
+
+- Ability for the `color` property to not be required on each level.
+- Ability to pass a hex value color in options array for automatic level color theming.
+- Ability to pass an entire `colors` array with specific values that will be used in succession with levels.
   
