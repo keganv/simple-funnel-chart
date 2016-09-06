@@ -76,7 +76,6 @@ function FunnelChart(data) {
         labels.appendChild(line);
         labels.appendChild(text); // Append the line and label to the SVG.
     };
-
-    // this.createTotalValue();
+    
     this.createLevels();
 }
