@@ -17,7 +17,7 @@ Create funnel charts with labels, any amount of levels (stages), and custom colo
         </svg>
     </svg>
     <!-- end required -->
-    <script src="keganv-funnel-chart.js" />
+    <script src="funnel-chart.js" />
     <script>
       new FunnelChart(data);
     </script>
