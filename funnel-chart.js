@@ -4,36 +4,36 @@ function FunnelChart(data) {
     this.totalValue = data.options && data.options.totalValue ? data.options.totalValue : 0;
 
     // Do not change
-    this.y          = 0;
+    this.y = 0;
 
     // Do not change
-    this.level      = 0;
+    this.level = 0;
 
     // Size of text, must be string
-    this.fontSize   = data.options && data.options.fontSize ? data.options.fontSize : '4';
+    this.fontSize = data.options && data.options.fontSize ? data.options.fontSize : '4';
 
     // Size of text, must be string
-    this.fontColor  = data.options && data.options.fontColor ? data.options.fontColor : '#000000';
+    this.fontColor = data.options && data.options.fontColor ? data.options.fontColor : '#000000';
 
-    this.createLevels = function() {
-        var self = this;
-        for (var level in data.levels) {
+    this.createLevels = function () {
+        const self = this;
+        for (const level in data.levels) {
             if (data.levels.hasOwnProperty(level)) {
-                var value = data.levels[level].value;
+                const value = data.levels[level].value;
                 if (value > 0) {
                     if (!this.totalValue) {
                         self.totalValue = self.totalValue + value;
                     }
-                    var rect = self.createRect(data.levels[level]);
+                    const rect = self.createRect(data.levels[level]);
                     document.querySelector('.funnel g.levels').appendChild(rect);
                 }
             }
         }
     };
 
-    this.createRect = function(level) {
-        var rect   = document.createElementNS('http://www.w3.org/2000/svg', 'rect'); // Create the rect element.
-        var height = ((level.value / this.totalValue) * 100);
+    this.createRect = function (level) {
+        const rect   = document.createElementNS('http://www.w3.org/2000/svg', 'rect'); // Create the rect element.
+        const height = ((level.value / this.totalValue) * 100);
         rect.setAttribute('width','100%');
         rect.setAttribute('height', height.toString());
         rect.setAttribute('x','0');
@@ -46,17 +46,17 @@ function FunnelChart(data) {
         return rect;
     };
 
-    this.createLabel = function(height, label, value, color) {
-        var valString = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        var labels    = document.querySelector('.labels');
-        var line      = document.createElementNS('http://www.w3.org/2000/svg', 'line');  // Create the line element.
-        var text      = document.createElementNS('http://www.w3.org/2000/svg', 'text');  // Create the text element.
-        var tspan1    = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); // Create the tspan element.
-        var tspan2    = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); // Create the tspan element.
-        var textNode1 = document.createTextNode(label);
-        var textNode2 = document.createTextNode(valString);
-        var xPos      = 78;
-        var yPos      = this.y - height / 2;
+    this.createLabel = function (height, label, value, color) {
+        const valString = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        const labels    = document.querySelector('.labels');
+        const line      = document.createElementNS('http://www.w3.org/2000/svg', 'line');  // Create the line element.
+        const text      = document.createElementNS('http://www.w3.org/2000/svg', 'text');  // Create the text element.
+        const tspan1    = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); // Create the tspan element.
+        const tspan2    = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); // Create the tspan element.
+        const textNode1 = document.createTextNode(label);
+        const textNode2 = document.createTextNode(valString);
+        const xPos      = 78;
+        const yPos      = this.y - height / 2;
         line.setAttribute('x1', '30');
         line.setAttribute('y1', yPos.toString());
         line.setAttribute('x2', xPos.toString());
@@ -76,6 +76,6 @@ function FunnelChart(data) {
         labels.appendChild(line);
         labels.appendChild(text); // Append the line and label to the SVG.
     };
-    
+
     this.createLevels();
 }
